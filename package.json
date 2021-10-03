@@ -1,6 +1,6 @@
 {
   "name": "transposition-cracker",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Crack row transposition ciphers with ease using bigram analysis.",
   "main": "bigram.js",
   "scripts": {
