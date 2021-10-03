@@ -123,7 +123,7 @@ readCSV();
 
 module.exports = {
     listener: emitter,
-    onReady: (() => new Promise(resolve => this.listener.once("ready", resolve)))(),
+    onReady: (() => new Promise(resolve => emitter.once("ready", resolve)))(),
     ready: () => bigramsRead,
     freqs: bigramFreqs,
     score: bigramScore,
