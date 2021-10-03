@@ -1,5 +1,6 @@
 const csv = require("csv-parse");
 const fs = require('fs');
+const path = require("path");
 const {EventEmitter} = require("stream");
 
 const emitter = new EventEmitter();
@@ -8,7 +9,7 @@ let bigramsRead = false;
 
 function readCSV() {
     return new Promise((resolve, _reject) => {
-        fs.createReadStream(`./bigram_frequencies.csv`)
+        fs.createReadStream(path.join(__dirname, `bigram_frequencies.csv`))
             .pipe(csv())
             .on('data', function (row) {
                 bigramFreqs[row[0]] = parseInt(row[1]);
